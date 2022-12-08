@@ -1,0 +1,1 @@
+SELECT * FROM compras  WHERE id_cliente IN (SELECT (id) FROM clientes WHERE nome = 'Benício Freire Sampaio');
