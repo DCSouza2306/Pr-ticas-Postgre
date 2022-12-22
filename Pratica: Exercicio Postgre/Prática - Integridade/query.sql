@@ -33,7 +33,8 @@ CREATE TABLE "customers" (
     "fullName" VARCHAR(80) NOT NULL,
     cpf VARCHAR(11) NOT NULL UNIQUE,
     email VARCHAR(64) NOT NULL UNIQUE,
-    password TEXT NOT NULL
+    password TEXT NOT NULL,
+    "adressId" INTEGER NOT NULL
 );
 
 CREATE TABLE "bankAccount"(
@@ -75,6 +76,9 @@ ALTER TABLE "customerAddresses" ADD CONSTRAINT "customerAddresses_fk0"
 FOREIGN KEY ("cityId") REFERENCES "cities"("id");
 ALTER TABLE "customerAddresses" ADD CONSTRAINT "customerAddresses_fk1" 
 FOREIGN KEY ("customerId") REFERENCES "customers"("id");
+
+ALTER TABLE "customers" ADD CONSTRAINT "customers_fk0"
+FOREIGN KEY ()
 
 ALTER TABLE "customerPhones" ADD CONSTRAINT "customerPhones_fk0" 
 FOREIGN KEY ("customerId") REFERENCES "customers"("id");
